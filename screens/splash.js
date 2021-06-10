@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, AsyncStorage} from 'react-native';
 
 export default class SplashScreen extends React.Component {
 
@@ -7,6 +7,9 @@ export default class SplashScreen extends React.Component {
         // Start counting when the page is loaded
         this.timeoutHandle = setTimeout(() => {
           // Add your logic for the transition
+          if (AsyncStorage.getItem("user_unique_id") != "") {
+            this.props.navigation.navigate("SideNav");
+          }
           this.props.navigation.navigate("Login");
         }, 3000);
       }

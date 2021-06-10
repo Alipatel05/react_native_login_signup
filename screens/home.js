@@ -20,6 +20,7 @@ export default class Home extends React.Component {
       >
         <Tab.Screen
           options={{
+            tabBarLabel: "Home",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="home" color={color} size={26} />
             ),
@@ -29,6 +30,7 @@ export default class Home extends React.Component {
         />
         <Tab.Screen
           options={{
+            tabBarLabel: "Tools",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="tools" color={color} size={26} />
             ),

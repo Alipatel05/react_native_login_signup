@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  AsyncStorage
 } from "react-native";
 
 import firebase from "firebase";
@@ -47,6 +48,10 @@ export default class Login extends React.Component {
           .then((res) => {
             console.log(res.user.email);
             this.setState({ Spinner: false });
+            AsyncStorage.setItem(
+              "user_unique_id",
+              res.user.email
+            );
             this.props.navigation.navigate("SideNav");
           });
       } catch (error) {
